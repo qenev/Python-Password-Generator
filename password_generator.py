@@ -65,6 +65,10 @@ def main():
         print("Error: Password length must be at least 4.")
         return
 
+    if args.length > 30:
+        print("Error: Max password length is 30 characters.")
+        return
+
     print(f"\n Generated Password{'s' if args.count > 1 else ''}:\n")
     for i in range(args.count):
         pwd = generate_password(
