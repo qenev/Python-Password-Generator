@@ -63,10 +63,12 @@ def main():
 
     if args.length < 4:
         print("Error: Password length must be at least 4.")
+        input("Press Enter to exit...")
         return
 
     if args.length > 30:
         print("Error: Max password length is 30 characters.")
+        input("Press Enter to exit...")
         return
 
     print(f"\n Generated Password{'s' if args.count > 1 else ''}:\n")
@@ -83,7 +85,12 @@ def main():
         else:
             print(f"  {pwd}")
     print()
+    input("Press Enter to exit...")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"\nUnexpected error: {e}")
+        input("Press Enter to exit...")
